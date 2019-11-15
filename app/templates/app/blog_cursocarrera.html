@@ -1,0 +1,103 @@
+{% extends 'app/base.html' %}
+
+{% block contenido %}
+    {% load staticfiles %}
+    <!-- ##### Breadcumb Area Start ##### -->
+    <div class="breadcumb-area bg-img" style="background-image: url({% static 'app/img/bg-img/breadcumb.jpg' %});">
+        <div class="bradcumbContent">
+            <h2>Nuestro Blog</h2>
+        </div>
+    </div>
+    <!-- ##### Breadcumb Area End ##### -->
+
+    <!-- ##### Blog Area Start ##### -->
+    <div class="blog-area mt-50 section-padding-100">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-md-8">
+                    <div class="academy-blog-posts">
+                        <div class="row">
+                        
+                                <table class="table">
+                                    <thead class="thead-dark">
+                                        <tr>
+                                        <th scope="col">No.</th>
+                                        <th scope="col">Estudiante</th>
+                                        <th scope="col">Curso</th>
+                    
+                                        </tr>
+                                    </thead>
+                                {% for asignacioncurso in asignacioncurso_list %}
+                                <tbody>
+                                        <tr>
+                                            <td>{{asignacioncurso.id_asignacion}}</td>
+                                            <td>{{asignacioncurso.estudiante_id}}</td>
+                                            <td>{{asignacioncurso.curso_id}}</td>
+                                            
+                                        </tr>
+                                    </tbody>
+                                {% endfor %}
+                                    
+                                </table>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-4">
+                    <div class="academy-blog-sidebar">
+
+                        <!-- Blog Post Catagories -->
+                        <div class="blog-post-categories mb-30">
+                            <h5>Estudiantes</h5>
+                            <ul>
+                                <li>
+                                    <!-- Button trigger modal -->
+                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalAsignacionCurso">
+                                    Asignar Curso de Carrera
+                                    </button>
+
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="modalAsignacionCurso" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-scrollable" role="document">
+                                        <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalScrollableTitle">Curso Académico</h5>
+                                            <button  type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <form method="POST" action="{% url 'blog_cc' %}">
+                                            {% csrf_token %}
+                                    <div class="form-group">
+                                        <label for="id_asignacion">ID de Asignación</label>
+                                        <input type="text" class="form-control" id="id_asignacion" name="id_asignacion">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="id_asignaestudiante">Carnet del Estudiante</label>
+                                        <input type="text" class="form-control" id="id_asignaestudiante" name="id_asignaestudiante">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="id_asignacurso">ID del Curso</label>
+                                        <input type="text" class="form-control" id="id_asignacurso" name="id_asignacurso">
+                                    </div>
+                                        <input type="submit" class="btn btn-primary" name="Guardar">
+                                    </form>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                        </div>
+                                        </div>
+                                    </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ##### Blog Area End ##### -->
+{% endblock contenido %}

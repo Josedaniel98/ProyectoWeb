@@ -1,0 +1,112 @@
+{% extends 'app/base.html' %}
+
+{% block contenido %}
+    {% load staticfiles %}
+    <!-- ##### Breadcumb Area Start ##### -->
+    <div class="breadcumb-area bg-img" style="background-image: url({% static 'app/img/bg-img/breadcumb.jpg' %});">
+        <div class="bradcumbContent">
+            <h2>Nuestro Blog</h2>
+        </div>
+    </div>
+    <!-- ##### Breadcumb Area End ##### -->
+
+    <!-- ##### Blog Area Start ##### -->
+    <div class="blog-area mt-50 section-padding-100">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-md-8">
+                    <div class="academy-blog-posts">
+                        <div class="row">
+                        
+                                <table class="table">
+                                    <thead class="thead-dark">
+                                        <tr>
+                                        <th scope="col">No.</th>
+                                        <th scope="col">Nombre</th>
+                                        <th scope="col">Horario</th>
+                                        <th scope="col">Catedrático</th>
+                                        
+                                        </tr>
+                                    </thead>
+                                {% for cursolibre in cursolibre_list %}
+                                <tbody>
+                                        <tr>
+                                            <td>{{cursolibre.id_CursoLibre}}</td>
+                                            <td>{{cursolibre.nombre}}</td>
+                                            <td>{{cursolibre.horario}}</td>
+                                            <td>{{cursolibre.catedratico_id}}</td>
+                                            
+                                        </tr>
+                                    </tbody>
+                                {% endfor %}
+                                    
+                                </table>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-4">
+                    <div class="academy-blog-sidebar">
+
+                        <!-- Blog Post Catagories -->
+                        <div class="blog-post-categories mb-30">
+                            <div class="single-latest-blog-post d-flex">
+                                <div class="latest-blog-post-thumb">
+                                    <img src="{% static 'app/img/blog-img/lb-4.jpg' %}" alt="">
+                                </div>
+                                <div class="latest-blog-post-content">
+                                    <!-- Button trigger modal -->
+                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalScrollable">
+                                    Ingresar Curso Libre
+                                    </button>
+
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="exampleModalScrollable" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-scrollable" role="document">
+                                        <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalScrollableTitle">Estudiantes</h5>
+                                            <button  type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <form method="POST" action="{% url 'blog_incurlib' %}">
+                                            {% csrf_token %}
+                                    <div class="form-group">
+                                        <label for="id_cursolibre">Id de Curso Libre</label>
+                                        <input type="text" class="form-control" id="id_cursolibre"  name="id_cursolibre">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="nombre_cursolibre">Nombre del Curso</label>
+                                        <input type="text" class="form-control" id="nombre_cursolibre"  name="nombre_cursolibre">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="horario_cursolibre">Horario</label>
+                                        <input type="text" class="form-control" id="horario_cursolibre"  name="horario_cursolibre">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="catedratico_cursolibre">Id de Catedrático</label>
+                                        <input type="text" class="form-control" id="catedratico_cursolibre"  name="catedratico_cursolibre">
+                                    </div>
+                                        <input type="submit" class="btn btn-primary" name="Guardar">
+                                    </form>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                        
+                                        </div>
+                                        </div>
+                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ##### Blog Area End ##### -->
+{% endblock contenido %}

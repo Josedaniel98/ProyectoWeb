@@ -1,0 +1,98 @@
+{% extends 'app/base.html' %}
+
+{% block contenido %}
+    {% load staticfiles %}
+    <!-- ##### Breadcumb Area Start ##### -->
+    <div class="breadcumb-area bg-img" style="background-image: url({% static 'app/img/bg-img/breadcumb.jpg' %});">
+        <div class="bradcumbContent">
+            <h2>Cursos libres</h2>
+        </div>
+    </div>
+    <!-- ##### Breadcumb Area End ##### -->
+
+    <!-- ##### Top Popular Courses Area Start ##### -->
+    <div class="top-popular-courses-area mt-50 section-padding-100-70">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-heading text-center mx-auto wow fadeInUp" data-wow-delay="300ms">
+                       
+                        <h3>Diplomados</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+
+               
+               
+                <!-- Single Top Popular Course -->
+               
+            </div>
+        </div>
+    </div>
+   
+    <div class="popular-course-details-area wow fadeInUp" data-wow-delay="300ms">
+      <div class="single-top-popular-course d-flex align-items-center flex-wrap">
+          <div class="popular-course-content">
+              <h5>Técnico profesional en música especializado en un instrumento musical</h5>
+              <span>Guitarra, Piano, Bajo, Batería, Saxofón, Trompeta,
+                Flauta, Trombón, Violín, Chello, Marimba o Canto.</span>
+              
+              <p>Nivel Inicial: Este curso pretende preparar al alumno para ser instrumentista, se desarrolla de Enero a Octubre y el crédito académico es un certificado de Instrumentista avalado por el Ministerio de Educación</p>
+           <p>Nivel Intermedio:  Se desarrolla de Enero a Octubre,   el prerequisito es el curso         nivel inicial   y      el  crédito académico es un Certificado de Instrumentista Nivel Intermedio. Avalado por el Ministerio de    Educación.</p>
+              <p>Nivel Avanzado:  La especialidad se desarrolla de Enero a Octubre, el prerequisito es el curso del nivel intermedio y el crédito académico es un Diploma de Instrumentista Profesional, Avalado por el Ministerio de Educación.
+              </p>
+           
+          </div>
+          <div class="popular-course-thumb bg-img" style="background-image: url({% static 'app/img/bg-img/diplomados.jpg' %});"></div>
+      </div>
+  </div>
+    <!-- ##### Course Area Start ##### -->
+    <div class="academy-courses-area section-padding-100-0">
+        <div class="container">
+            <div class="row">
+                <!-- Single Course Area -->
+                <div class="col-12 col-lg-4">
+                    <div class="single-course-area d-flex align-items-center mb-100">
+                        <div class="course-icon">
+                          <i class="fa fa-clock-o"></i>
+                        </div>
+                        <div class="course-content">
+                            <h4>Duracion de la carrera</h4>
+                            <p>1, 2 y hasta 3 años</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Single Course Area -->
+                <div class="col-12 col-lg-4">
+                    <div class="single-course-area d-flex align-items-center mb-100">
+                        <div class="course-icon">
+                            <i class="fa fa-money"></i>
+                        </div>
+                        <div class="course-content">
+                            <h4>Costos</h4>
+                            <p>Inscripción: Q100</p>
+                            <p>Colegiatura: Q250, Q275 y Q300 (10 colegiaturas)</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Single Course Area -->
+                <div class="col-12 col-lg-4">
+                    <div class="single-course-area d-flex align-items-center mb-100">
+                        <div class="course-icon">
+                            <i class="fa fa-sun-o"></i>
+                        </div>
+                        <div class="course-content">
+                            <h4>Jornada</h4>
+                            <p>Plan semanal y fin de semana (Sábados).</p>
+                            <p>Modalidad:Presencial, Semi Presencial y a Distancia.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ##### Course Area End ##### -->
+
+    
+{% endblock contenido %}

@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <!-- Title -->
+    <title>{{title}}</title>
+    
+    {% load staticfiles %}
+    <!-- Favicon -->
+    <link rel="icon" href="{% static 'app/img/core-img/favicon.ico' %}">
+
+    <!-- Core Stylesheet -->
+    <link rel="stylesheet" href="{% static 'app/content/style.css' %}">
+
+    <link rel="stylesheet" href="{% static 'app/content/bootstrap.css' %}">
+</head>
+
+<body>
+    <!-- ##### Preloader ##### -->
+    <div id="preloader">
+        <i class="circle-preloader"></i>
+    </div>
+
+    <!-- ##### Header Area Start ##### -->
+    <header class="header-area">
+
+        <!-- Top Header Area -->
+        <div class="top-header">
+            <div class="container h-100">
+                <div class="row h-100">
+                    <div class="col-12 h-100">
+                        <div class="header-content h-100 d-flex align-items-center justify-content-between">
+                            <div class="academy-logo">
+                                <a href="{% url 'home' %}"><img src="{% static 'app/img/core-img/logo1.png' %}" alt="Planeta Musical Logo"  width="220"></a>
+                            </div>
+                                {% if user.is_authenticated  %}
+                                <div >
+                                    <p>Bienvenido: {{ user }}    |   <a href="{% url 'login_salir' %}">Salir</a></p>       
+
+                                </div>
+                                {% else %}
+                                    <div class="login-content">
+                                    <a href="{% url 'login_registrar' %}">Registro</a>
+                                    <a href="{% url 'login' %}">Ingresar</a>
+                            </div>
+                          
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navbar Area -->
+        <div class="academy-main-menu">
+            <div class="classy-nav-container breakpoint-off">
+                <div class="container">
+                    <!-- Menu -->
+                    <nav class="classy-navbar justify-content-between" id="academyNav">
+
+                        <!-- Navbar Toggler -->
+                        <div class="classy-navbar-toggler">
+                            <span class="navbarToggler"><span></span><span></span><span></span></span>
+                        </div>
+
+                        <!-- Menu -->
+                        <div class="classy-menu">
+
+                            <!-- close btn -->
+                            <div class="classycloseIcon">
+                                <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
+                            </div>
+
+                            <!-- Nav Start -->
+                            <div class="classynav">
+                                <ul>
+                                    <li><a href="{% url 'home' %}">Inicio</a></li>
+                                    <li><a>Servicios Académicos</a>
+                                        <ul class="dropdown">
+                                            <li><a href="{% url 'cursos' %}">Carreras</a></li>
+                                            <li><a href="{% url 'cursolibre' %}">Cursos Libres</a></li>
+                                        </ul>
+                                    </li>
+                                    
+                                    <li><a href="{% url 'acercade' %}">Acerca de Nosotros</a></li>
+                                    <li><a href="{% url 'contacto' %}">Contacto</a></li>
+                                    <li><a href="{% url 'blog' %}">Blog</a></li>
+                                </ul>
+                            </div>
+                            <!-- Nav End -->
+                        </div>
+
+                        <!-- Calling Info -->
+                        <div class="calling-info">
+                            <div class="call-center">
+                                <a href="tel:+50277602489"><i class="icon-telephone-2"></i> <span>(+502) 7760 2489</span></a>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- ##### Header Area End ##### -->
+
+{% block contenido %}
+{% endblock contenido %}
+
+    <!-- ##### Footer Area Start ##### -->
+    <footer class="footer-area">
+        <div class="main-footer-area section-padding-100-0">
+            <div class="container">
+                <div class="row">
+                    <!-- Footer Widget Area -->
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <div class="footer-widget mb-100">
+                            <div class="widget-title">
+                                <a href="#"><img src="{% static 'app/img/core-img/logo2.jpg' %}" alt="Planeta Musical Logo" width="200" ></a>
+                            </div>
+                            <p>¡SOMOS UNA FAMILIA, SOMOS PLANETA MUSICAL!</p>
+                            <div class="footer-social-info">
+                                <a href="https://www.facebook.com/planetamusicalsanmarcos/" target="_blank"><i class="fa fa-facebook"></i></a>
+                                <a href="tel:+50253664453"><i class="fa fa-whatsapp"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Footer Widget Area -->
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <div class="footer-widget mb-100">
+                            <div class="widget-title">
+                                <h6>Enlaces Útiles</h6>
+                            </div>
+                            <nav>
+                                <ul class="useful-links">
+                                    <li><a href="{% url 'home' %}">Home</a></li>
+                                    <li><a href="{% url 'cursos' %}">Servicios Académicos</a></li>
+                                    <li><a href="https://umg.edu.gt/" target="_blank">Universidad Mariano Gálvez</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                    <!-- Footer Widget Area -->
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <div class="footer-widget mb-100">
+                            <div class="widget-title">
+                                <h6>Galería</h6>
+                            </div>
+                            <div class="gallery-list d-flex justify-content-between flex-wrap">
+                                <a href="{% static 'app/img/bg-img/gallery1.png' %} " class="gallery-img" title="Gallery Image 1"><img src="{% static 'app/img/bg-img/gallery1.png' %}" alt=""></a>
+                                <a href="{% static 'app/img/bg-img/gallery2.png' %} " class="gallery-img" title="Gallery Image 2"><img src="{% static 'app/img/bg-img/gallery2.png' %}" alt=""></a>
+                                <a href="{% static 'app/img/bg-img/gallery3.png' %} " class="gallery-img" title="Gallery Image 3"><img src="{% static 'app/img/bg-img/gallery3.png' %}" alt=""></a>
+                                <a href="{% static 'app/img/bg-img/gallery4.png' %} " class="gallery-img" title="Gallery Image 4"><img src="{% static 'app/img/bg-img/gallery4.png' %}" alt=""></a>
+                                <a href="{% static 'app/img/bg-img/gallery5.png' %} " class="gallery-img" title="Gallery Image 5"><img src="{% static 'app/img/bg-img/gallery5.png' %}" alt=""></a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Footer Widget Area -->
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <div class="footer-widget mb-100">
+                            <div class="widget-title">
+                                <h6>Contacto</h6>
+                            </div>
+                            <div class="single-contact d-flex mb-30">
+                                <i class="icon-placeholder"></i>
+                                <p>3ra Av. A, 3-40 Zona 4, San Pedro Sacatepéquez, San Marcos, Guatemala</p>
+                            </div>
+                            <div class="single-contact d-flex mb-30">
+                                <i class="icon-telephone-1"></i>
+                                <p>Oficina: 7760-2489 <br>Celular: 5366-4453</p>
+                            </div>
+                            <div class="single-contact d-flex">
+                                <i class="icon-contract"></i>
+                                <p>silg17@yahoo.com</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bottom-footer-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Copyright &copy; {{year}} Ingeniería en Sistemas. Todos los derechos reservados.
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- ##### Footer Area Start ##### -->
+
+    <!-- ##### All Javascript Script ##### -->
+    <!-- jQuery-2.2.4 js -->
+    <script src="{% static 'app/scripts/jquery-1.10.2.js' %}"></script>
+    <!-- Popper js -->
+    <script src="{% static 'app/scripts/popper.min.js' %}"></script>
+    <!-- Bootstrap js -->
+    <script src="{% static 'app/scripts/bootstrap.min.js' %}"></script>
+    <!-- All Plugins js -->
+    <script src="{% static 'app/scripts/plugins.js' %}"></script>
+    <!-- Active js -->
+    <script src="{% static 'app/scripts/active.js' %}"></script>
+    <!--Script de Chat-->
+    <script src="{% static 'app/scripts/chat.js' %}"></script>
+</body>
+
+</html>

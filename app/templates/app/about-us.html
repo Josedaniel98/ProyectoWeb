@@ -1,0 +1,269 @@
+{% extends 'app/base.html' %}
+
+{% block contenido %}
+    {% load staticfiles %}
+    <!-- ##### Breadcumb Area Start ##### -->
+    <div class="breadcumb-area bg-img" style="background-image: url({% static 'app/img/bg-img/breadcumb.jpg' %});">
+        <div class="bradcumbContent">
+            <h2>BIENVENIDOS</h2>
+        </div>
+    </div>
+    <!-- ##### Breadcumb Area End ##### -->
+
+    <!-- ##### About Us Area Start ##### -->
+    <section class="about-us-area mt-50 section-padding-100">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-heading text-center mx-auto wow fadeInUp" data-wow-delay="300ms">
+                        <h3>COLEGIO PLANETA MUSICAL</h3><BR>
+                        <span>"Somos Una Familia, Somos Planeta Musical" </span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 col-md-6 wow fadeInUp" data-wow-delay="400ms">
+                    <p><H5> NUESTRA MISIÓN</H5>
+                        Somos un grupo de profesionales del arte de la música,
+                        constituidos en una academia, con la finalidad de educar 
+                        musicalmente a la población marquense a través de cursos
+                        aplicados de música con especialización en un instrumento musical,
+                        con eficiencia y eficacia.
+                    </p>
+                </div>
+                <div class="col-12 col-md-6 wow fadeInUp" data-wow-delay="500ms">
+                    <p><H5>NUESTRA VISIÓN</H5>
+                        Ser una academia líder en el ámbito musical-artístico
+                        y propiciar en el Departamento de San Marcos un ambiente 
+                        culto y sano con valores y actitudes de paz, 
+                        a través del Arte de la Música.
+                    </p>
+                </div>
+                 
+            </div>
+            
+                <div class="section-heading text-center mx-auto wow fadeInUp" class="col-19" >
+                    <div class="about-slides owl-carousel mt-100 wow fadeInUp" data-wow-delay="600ms">
+                        <img src="{% static 'app/img/bg-img/fondo.jpg' %}" alt="Planeta musical" height="900" width="500">
+                        <img src="{% static 'app/img/bg-img/fondo2.jpg' %}" alt="Planeta musical" height="900" width="900">
+                        <img src="{% static 'app/img/bg-img/fondo3.jpg' %}" alt="Planeta musical" height="900" width="900">
+                        <img src="{% static 'app/img/bg-img/fondo4.png' %}" alt="Planeta musical" height="900" width="900">
+                    </div>
+                </div>
+            
+                <div class="col-12 col-md-6 wow fadeInUp" data-wow-delay="500ms">
+                    <p><H5> Sevicios Educativos Autorizados:</H5>                       
+                             -Bachillerato en Ciencias y Letras con Orientación en Música<br>
+                             -Bachillerato en Ciencias y Letras con Orientación en Artes Visuales (Diseño Gráfico, Pintura, Fotografía)<br>
+                             -Bachillerato en Ciencias y Letras con Orientación en Artes Escénicas (Teatro, Actuación, Danza)<br>
+                             -Técnico Profesional en Música Especializado en un Instrumento Musical. (Bajo, Guitarra, Piano, Batería)<br>
+                    </p>
+                </div>
+                <div class="col-12 col-md-6 wow fadeInUp" data-wow-delay="500ms">
+                    <p><H5> Nivel Inicial:</H5>                       
+                              Este curso pretende preparar 
+                              al alumno para ser instrumentista, 
+                              se desarrolla de Enero a Octubre y
+                              el crédito académico es un certificado
+                              de Instrumentista avalado por el Ministerio de Educación                  
+                    </p>
+                </div>
+                <div class="col-12 col-md-6 wow fadeInUp" data-wow-delay="500ms">
+                    <p><H5> Nivel Intermedio:</H5>                       
+                             Se desarrolla de Enero a Octubre,
+                             el prerequisito es el curso         
+                             nivel inicial   y      el  crédito 
+                             académico es un Certificado de Instrumentista 
+                             Nivel Intermedio. Avalado por el Ministerio de    Educació                
+                    </p>
+                </div><div class="col-12 col-md-6 wow fadeInUp" data-wow-delay="500ms">
+                    <p><H5> Nivel Avanzado:</H5>                       
+                             La especialidad se desarrolla de Enero a Octubre, 
+                             el prerequisito es el curso del nivel intermedio 
+                             y el crédito académico es un Diploma de 
+                             Instrumentista Profesional, Avalado por el Ministerio de Educación.                
+                    </p>
+                </div>
+                
+            </div> 
+        </div>
+        
+    </section>
+    <!-- ##### About Us Area End ##### -->
+
+    <!-- ##### Team Area Start ##### -->
+    <section class="teachers-area section-padding-0-100">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-heading text-center mx-auto wow fadeInUp" data-wow-delay="300ms">
+                        <h3>*CATEDRÁTICOS*</h3>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <!-- Single Teachers -->
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="single-teachers-area text-center mb-100 wow fadeInUp" data-wow-delay="400ms">
+                        <!-- Thumbnail -->
+                        <div class="teachers-thumbnail">
+                            <img src="{% static 'app/img/bg-img/tea1.jpg' %}" alt="">
+                        </div>
+                        <!-- Meta Info -->
+                        <div class="teachers-info mt-30">
+                            <h5>Maria D. Smith</h5>
+                            <span>Marketing Proffesor</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Single Teachers -->
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="single-teachers-area text-center mb-100 wow fadeInUp" data-wow-delay="500ms">
+                        <!-- Thumbnail -->
+                        <div class="teachers-thumbnail">
+                            <img src="{% static 'app/img/bg-img/tea2.jpg' %}" alt="">
+                        </div>
+                        <!-- Meta Info -->
+                        <div class="teachers-info mt-30">
+                            <h5>Simon Duval</h5>
+                            <span>Digital Proffesor</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Single Teachers -->
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="single-teachers-area text-center mb-100 wow fadeInUp" data-wow-delay="600ms">
+                        <!-- Thumbnail -->
+                        <div class="teachers-thumbnail">
+                            <img src="{% static 'app/img/bg-img/tea3.jpg' %}" alt="">
+                        </div>
+                        <!-- Meta Info -->
+                        <div class="teachers-info mt-30">
+                            <h5>James Hogan</h5>
+                            <span>HTML Proffesor</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Single Teachers -->
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="single-teachers-area text-center mb-100 wow fadeInUp" data-wow-delay="700ms">
+                        <!-- Thumbnail -->
+                        <div class="teachers-thumbnail">
+                            <img src="{% static 'app/img/bg-img/tea4.jpg' %}" alt="">
+                        </div>
+                        <!-- Meta Info -->
+                        <div class="teachers-info mt-30">
+                            <h5>Claudia Williams</h5>
+                            <span>Marketing Proffesor</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-heading text-center mx-auto wow fadeInUp" data-wow-delay="300ms">
+                        <h3>Universidad Mariano Gálvez de Guatemala</h3><BR>
+                        <span>"Y conocereis la verdad y la verdad os hará libre" </span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 col-md-6 wow fadeInUp" data-wow-delay="400ms">
+                    <p><H5>FILOSOFIA</H5>
+                       La Universidad Mariano Gálvez , 
+                       es una institución de educación 
+                       superior, privada, independiente, 
+                       no lucrativa, que funciona de acuerdo 
+                       con las leyes propias de su naturaleza 
+                       institucional, que fue aprobada el 
+                       29 de Enero de 1966, por el Consejo 
+                       Supremo Universitario de la Universidad de San Carlos de Guatemala.
+                       <BR>La Universidad Mariano Gálvez reconoce el derecho de los estudiantes 
+                       a organizarse libremente en asociaciones, siempre que lo hagan con 
+                       el propósito de realizar actividades culturales, sociales o deportivas. 
+                       Sus estatutos serán aprobados por el Consejo Directivo.
+                    </p>
+                </div>
+                <div class="col-12 col-md-6 wow fadeInUp" data-wow-delay="500ms">
+                    <p><H5>FACULTADES.</H5>
+                        -ARQUITECTURA<br>
+                        -CIENCIAS DE LA ADMINISTRACION<br>
+                        -CIENCICAS ECONOMICAS<br>
+                        -CIENCIAS JURIDICAS Y SOCIALES<br>
+                        -CIENCIAS MEDICAS Y DE LA SALUD<br>
+                        -HUMANIDADES<br>
+                        -INGENIERIA EN SISTEMAS<br>
+                        -ODONTOLOGIA<br>
+                        -NUTRICION<br>
+                    </p>
+                </div>
+                
+            </div> 
+        </div>
+        
+    </section>
+    <section class="teachers-area  ">
+        <div class= "container ">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-heading text-center mx-auto wow fadeInUp" data-wow-delay="300ms">
+                       
+                        <h3>CREADORES DE LA PAGINA</h3>
+                         <span> Alumnos de ingenieria en sistemas </span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row" 'center'>
+                <!-- Single Teachers -->
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="single-teachers-area text-center mb-100 wow fadeInUp" data-wow-delay="400ms">
+                        <!-- Thumbnail -->
+                        <div class="teachers-thumbnail">
+                            <img src="{% static 'app/img/bg-img/tea1.jpg' %}" alt="">
+                        </div>
+                        <!-- Meta Info -->
+                        <div class="teachers-info mt-30">
+                            <h5>Luis Ricardo Fuentes</h5>
+                           
+                        </div>
+                    </div>
+                </div>
+                <!-- Single Teachers -->
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="single-teachers-area text-center mb-100 wow fadeInUp" data-wow-delay="500ms">
+                        <!-- Thumbnail -->
+                        <div class="teachers-thumbnail">
+                            <img src="{% static 'app/img/bg-img/tea2.jpg' %}" alt="">
+                        </div>
+                        <!-- Meta Info -->
+                        <div class="teachers-info mt-30">
+                            <h5>Jose Daniel Velasquez</h5>
+                            
+                        </div>
+                    </div>
+                </div>
+                <!-- Single Teachers -->
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="single-teachers-area text-center mb-100 wow fadeInUp" data-wow-delay="600ms">
+                        <!-- Thumbnail -->
+                        <div class="teachers-thumbnail">
+                            <img src="{% static 'app/img/bg-img/tea3.jpg' %}" alt="">
+                        </div>
+                        <!-- Meta Info -->
+                        <div class="teachers-info mt-30">
+                            <h5>Pablo Javier Miranda</h5>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>    
+    </section>
+    <!-- ##### Features Area Start ##### -->
+{% endblock contenido %}

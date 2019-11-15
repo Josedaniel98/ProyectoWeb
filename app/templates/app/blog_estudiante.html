@@ -1,0 +1,120 @@
+{% extends 'app/base.html' %}
+
+{% block contenido %}
+    {% load staticfiles %}
+    <!-- ##### Breadcumb Area Start ##### -->
+    <div class="breadcumb-area bg-img" style="background-image: url({% static 'app/img/bg-img/breadcumb.jpg' %});">
+        <div class="bradcumbContent">
+            <h2>Nuestro Blog</h2>
+        </div>
+    </div>
+    <!-- ##### Breadcumb Area End ##### -->
+
+    <!-- ##### Blog Area Start ##### -->
+    <div class="blog-area mt-50 section-padding-100">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-md-8">
+                    <div class="academy-blog-posts">
+                        <div class="row">
+                        
+                                <table class="table">
+                                    <thead class="thead-dark">
+                                        <tr>
+                                        <th scope="col">Nombre</th>
+                                        <th scope="col">Apellido</th>
+                                        <th scope="col">Carnet</th>
+                                        <th scope="col">Dirección</th>
+                                        <th scope="col">Teléfono</th>
+                                        <th scope="col">Carrera</th>
+                                        </tr>
+                                    </thead>
+                                {% for estudiante in estudiante_list %}
+                                <tbody>
+                                        <tr>
+                                            <td>{{estudiante.nombre}}</td>
+                                            <td>{{estudiante.apellido}}</td>
+                                            <td>{{estudiante.carnet}}</td>
+                                            <td>{{estudiante.direccion}}</td>
+                                            <td>{{estudiante.telefono}}</td>
+                                            <td>{{estudiante.carrera_id}}</td>
+                                        </tr>
+                                    </tbody>
+                                {% endfor %}
+                                    
+                                </table>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-4">
+                    <div class="academy-blog-sidebar">
+
+                        <!-- Blog Post Catagories -->
+                        <div class="blog-post-categories mb-30">
+                            <h5>Estudiantes</h5>
+                            <ul>
+                                <li>
+                                <!-- Button trigger modal -->
+                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalEstudiante">
+                                    Ingresar estudiante
+                                    </button>
+
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="modalEstudiante" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-scrollable" role="document">
+                                        <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalScrollableTitle">Estudiantes</h5>
+                                            <button  type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <form method="POST" action="{% url 'blog_est' %}">
+                                            {% csrf_token %}
+                                    <div class="form-group">
+                                        <label for 'nomest'>Nombre</label>
+                                        <input type="text" class="form-control" id="nomest" name="nomest">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="apellido_est">Apellido</label>
+                                        <input type="text" class="form-control" id="apellido_est" name="apellido_est">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="direccion_est">Direccion</label>
+                                        <input type="text" class="form-control" id="direccion_est" name="direccion_est">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="carnet_est">Carnet</label>
+                                        <input type="text" class="form-control" id="carnet_est"  name="carnet_est">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="telefono_est">Telefono</label>
+                                        <input type="text" class="form-control" id="telefono_est" name="telefono_est">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="carrera_est">Carrera</label>
+                                        <input type="text" class="form-control" id="carrera_est" name="carrera_est">
+                                    </div>
+                                        <input type="submit" class="btn btn-primary" name="Guardar">
+                                    </form>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                        
+                                        </div>
+                                        </div>
+                                    </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ##### Blog Area End ##### -->
+{% endblock contenido %}
